@@ -14,11 +14,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     videoplayer.cpp \
-    playerslider.cpp
+    playerslider.cpp \
+    wdtpicprpty.cpp \
+    vGetImgPlacement.cpp
 
 HEADERS  += \
     videoplayer.h \
-    playerslider.h
+    playerslider.h \
+    wdtpicprpty.h \
+    vGetImgPlacement.h
 
 FORMS    += \
-    videoplayer.ui
+    videoplayer.ui \
+    wdtpicprpty.ui
