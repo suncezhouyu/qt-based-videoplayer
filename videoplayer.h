@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QtMultimedia>
 #include <QVideoWidget>
+#include "wdtpicprpty.h"
 
 namespace Ui {
 class VideoPlayer;
@@ -18,14 +19,19 @@ public:
     ~VideoPlayer();
 
     bool            m_bReLoad;
+    QPixmap         m_pixmap;
+    WdtPicPrpty   * m_pWdtPicPrpty;
+
 public slots:
     void            OnSetMediaFile(void);
     void            OnSlider(qint64);
     void            OnDurationChanged(qint64);
     void            OnStateChanged(QMediaPlayer::State);
+    void            OnSavePic(void);
 private:
     QVideoWidget    *       m_pPlayerWidget;
     QMediaPlayer    *       m_pPlayer;
+    QMediaPlaylist  *       m_pPlayList;
     Ui::VideoPlayer *ui;
 };
 

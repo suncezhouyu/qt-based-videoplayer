@@ -13,17 +13,6 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QWidget" name="verticalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>30</y>
-     <width>721</width>
-     <height>481</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout"/>
-  </widget>
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
@@ -56,6 +45,13 @@
      </widget>
     </item>
     <item>
+     <widget class="QPushButton" name="BtnSave">
+      <property name="text">
+       <string>截图</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="PlayerSlider" name="slider">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
@@ -64,12 +60,28 @@
     </item>
    </layout>
   </widget>
+  <widget class="QVideoWidget" name="widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>801</width>
+     <height>511</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
  <customwidgets>
   <customwidget>
    <class>PlayerSlider</class>
    <extends>QSlider</extends>
    <header location="global">playerslider.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QVideoWidget</class>
+   <extends>QWidget</extends>
+   <header>qvideowidget.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>
