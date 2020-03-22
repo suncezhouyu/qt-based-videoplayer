@@ -14,11 +14,13 @@ class WdtPicPrpty : public QWidget
 public:
     explicit WdtPicPrpty(QWidget *parent = 0);
     ~WdtPicPrpty();
-    void            vSetOverView(QPixmap);
+    void            vSetOverView(void);
+    void            vSetCapture(QPixmap &, QRect);
 
 public slots:
     void            OnCapture(void);
 private:
+    QPixmap         m_pixmap;
     Ui::WdtPicPrpty *ui;
 };
 

@@ -19,7 +19,7 @@ public:
     ~VideoPlayer();
 
     bool            m_bReLoad;
-    QPixmap         m_pixmap;
+
     WdtPicPrpty   * m_pWdtPicPrpty;
 
 public slots:

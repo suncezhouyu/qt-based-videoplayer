@@ -9,6 +9,7 @@ VideoPlayer::VideoPlayer(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    setWindowTitle(QString::fromLocal8Bit("Player"));
     m_pPlayer = new QMediaPlayer;
     m_pPlayerWidget = ui->widget;//new QVideoWidget;
     m_pPlayer->setVideoOutput(m_pPlayerWidget);
@@ -57,7 +58,7 @@ VideoPlayer::VideoPlayer(QWidget *parent) :
 VideoPlayer::~VideoPlayer()
 {
     delete m_pPlayer;
-    delete m_pPlayerWidget;
+
     delete m_pPlayList;
     delete m_pWdtPicPrpty;
     delete ui;
@@ -127,7 +128,7 @@ void VideoPlayer::OnSavePic(void)
     rctVideo.setWidth(rctPlayer.width());
     rctVideo.setHeight(rctPlayer.height());
 
-    m_pixmap = pixmapTmp.copy(rctVideo);
+    m_pWdtPicPrpty->vSetCapture(pixmapTmp, rctVideo);
     m_pWdtPicPrpty->show();
-    m_pWdtPicPrpty->vSetOverView(m_pixmap);
+    m_pWdtPicPrpty->vSetOverView();
 }
