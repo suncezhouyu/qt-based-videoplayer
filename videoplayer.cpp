@@ -15,8 +15,6 @@ VideoPlayer::VideoPlayer(QWidget *parent) :
     m_pPlayer->setVideoOutput(m_pPlayerWidget);
     //ui->verticalLayout->addWidget(m_pPlayerWidget);
 
-    m_pPlayList = new QMediaPlaylist;
-
 
     m_pPlayerWidget->setAutoFillBackground(true);
     QPalette qplte;
@@ -49,8 +47,6 @@ VideoPlayer::VideoPlayer(QWidget *parent) :
 VideoPlayer::~VideoPlayer()
 {
     delete m_pPlayer;
-
-    delete m_pPlayList;
     delete m_pWdtPicPrpty;
     delete ui;
 }

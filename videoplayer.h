@@ -31,7 +31,7 @@ public slots:
 private:
     QVideoWidget    *       m_pPlayerWidget;
     QMediaPlayer    *       m_pPlayer;
-    QMediaPlaylist  *       m_pPlayList;
+
     Ui::VideoPlayer *ui;
 };
 
