@@ -18,7 +18,7 @@ public:
     explicit VideoPlayer(QWidget *parent = 0);
     ~VideoPlayer();
 
-    bool            m_bReLoad;
+
 
     WdtPicPrpty   * m_pWdtPicPrpty;
 

@@ -16,16 +16,7 @@ VideoPlayer::VideoPlayer(QWidget *parent) :
     //ui->verticalLayout->addWidget(m_pPlayerWidget);
 
     m_pPlayList = new QMediaPlaylist;
-    QString qstrPath = QDir::currentPath() + "/video";
-    QDir dir(qstrPath);
-    QStringList filters;
-    filters<<"*.avi"<<"*.mp4";
-    QStringList files = dir.entryList(filters, QDir::Files | QDir::Readable, QDir::Name);
-    foreach(QString qstrName, files)
-    {
-        m_pPlayList->addMedia(QUrl::fromLocalFile(QString("%1/%2").arg(qstrPath).arg(qstrName)));
-    }
-    m_pPlayer->setPlaylist(m_pPlayList);
+
 
     m_pPlayerWidget->setAutoFillBackground(true);
     QPalette qplte;
@@ -42,7 +33,7 @@ VideoPlayer::VideoPlayer(QWidget *parent) :
 
     ui->BtnStop->setEnabled(false);
     //设置滑块行为
-    m_bReLoad = true;
+
     ui->slider->setEnabled(false);
     connect(m_pPlayer, SIGNAL(positionChanged(qint64)), this, SLOT(OnSlider(qint64)));
     connect(m_pPlayer, SIGNAL(durationChanged(qint64)), this, SLOT(OnDurationChanged(qint64)));
@@ -75,7 +66,7 @@ void VideoPlayer::OnSetMediaFile(void)
     if(!fileNames.empty())
     {
         m_pPlayer->setMedia(QUrl::fromLocalFile(fileNames[0]));
-        m_bReLoad = true;
+
         ui->slider->setValue(0);
     }
 }
@@ -87,10 +78,10 @@ void VideoPlayer::OnSlider(qint64 i64Pos)
 
 void VideoPlayer::OnDurationChanged(qint64 i64Duration)
 {
-    if(i64Duration > 0 && m_bReLoad)
+    if(i64Duration > 0)
     {
         ui->slider->setRange(0, i64Duration);
-        m_bReLoad = false;
+
     }
 }
 
